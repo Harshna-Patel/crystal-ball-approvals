@@ -1,0 +1,11 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> crystal-ball@1.0.0 check:ai
+> node --import tsx server/check-ai.ts
+
+Checking the same structured streaming request used by the app. This uses API credits when a valid key is configured.
+[approvals.ai] { code: 'missing_key' }
+AI check failed: {
+  code: 'missing_key',
+  message: 'Set OPENAI_API_KEY in the project root .env file, then restart the server.'
+}

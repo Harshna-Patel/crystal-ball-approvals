@@ -1,0 +1,43 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+FAIL server/app.test.ts
+  ● Test suite failed to run
+
+    [96mserver/app.test.ts[0m:[93m2[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module './app' or its corresponding type declarations.
+
+    [7m2[0m import {createApp} from './app';
+    [7m [0m [91m                        ~~~~~~~[0m
+    [96mserver/app.test.ts[0m:[93m5[0m:[93m28[0m - [91merror[0m[90m TS7006: [0mParameter '_m' implicitly has an 'any' type.
+
+    [7m5[0m  const app=createApp(async(_m,emit)=>{emit('Four ');emit('items');return {text:'Four items',priorities:[],sources:[]};},100);
+    [7m [0m [91m                           ~~[0m
+    [96mserver/app.test.ts[0m:[93m5[0m:[93m31[0m - [91merror[0m[90m TS7006: [0mParameter 'emit' implicitly has an 'any' type.
+
+    [7m5[0m  const app=createApp(async(_m,emit)=>{emit('Four ');emit('items');return {text:'Four items',priorities:[],sources:[]};},100);
+    [7m [0m [91m                              ~~~~[0m
+    [96mserver/app.test.ts[0m:[93m15[0m:[93m40[0m - [91merror[0m[90m TS7006: [0mParameter '_m' implicitly has an 'any' type.
+
+    [7m15[0m  const r=await request(createApp(async(_m,emit)=>{emit('Partial');throw Error('secret key detail');},100)).post('/api/ai').send(body);
+    [7m  [0m [91m                                       ~~[0m
+    [96mserver/app.test.ts[0m:[93m15[0m:[93m43[0m - [91merror[0m[90m TS7006: [0mParameter 'emit' implicitly has an 'any' type.
+
+    [7m15[0m  const r=await request(createApp(async(_m,emit)=>{emit('Partial');throw Error('secret key detail');},100)).post('/api/ai').send(body);
+    [7m  [0m [91m                                          ~~~~[0m
+
+FAIL server/service.test.ts
+  ● Test suite failed to run
+
+    [96mserver/service.test.ts[0m:[93m1[0m:[93m26[0m - [91merror[0m[90m TS2307: [0mCannot find module './service' or its corresponding type declarations.
+
+    [7m1[0m import { handleAI } from './service';
+    [7m [0m [91m                         ~~~~~~~~~~~[0m
+
+Test Suites: 2 failed, 2 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        2.109 s
+Ran all test suites.

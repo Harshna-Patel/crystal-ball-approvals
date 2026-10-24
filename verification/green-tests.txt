@@ -1,0 +1,109 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> crystal-ball@1.0.0 test
+> npm run test:server && npm run test:ui
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> crystal-ball@1.0.0 test:server
+> jest --runInBand
+
+PASS server/provider.test.ts
+PASS server/app.test.ts
+  ● Console
+
+    console.warn
+      [approvals.ai] { code: 'timeout' }
+
+      84 |           : 'unavailable';
+      85 |     const diagnostic = diagnose(err);
+    > 86 |     console.warn('[approvals.ai]', { code: diagnostic.code });
+         |             ^
+      87 |     emit({ type: 'fallback', reason, diagnostic });
+      88 |     return { answer: fallback(input), fallback: true as const, reason };
+      89 |   } finally {
+
+      at handleAI (server/service.ts:86:13)
+      at server/app.ts:60:22
+
+    console.warn
+      [approvals.ai] { code: 'provider_unavailable' }
+
+      84 |           : 'unavailable';
+      85 |     const diagnostic = diagnose(err);
+    > 86 |     console.warn('[approvals.ai]', { code: diagnostic.code });
+         |             ^
+      87 |     emit({ type: 'fallback', reason, diagnostic });
+      88 |     return { answer: fallback(input), fallback: true as const, reason };
+      89 |   } finally {
+
+      at handleAI (server/service.ts:86:13)
+      at server/app.ts:60:22
+
+    console.warn
+      [approvals.ai] { code: 'quota_exceeded' }
+
+      84 |           : 'unavailable';
+      85 |     const diagnostic = diagnose(err);
+    > 86 |     console.warn('[approvals.ai]', { code: diagnostic.code });
+         |             ^
+      87 |     emit({ type: 'fallback', reason, diagnostic });
+      88 |     return { answer: fallback(input), fallback: true as const, reason };
+      89 |   } finally {
+
+      at handleAI (server/service.ts:86:13)
+      at server/app.ts:60:22
+
+PASS server/service.test.ts
+  ● Console
+
+    console.warn
+      [approvals.ai] { code: 'invalid_response' }
+
+      84 |           : 'unavailable';
+      85 |     const diagnostic = diagnose(err);
+    > 86 |     console.warn('[approvals.ai]', { code: diagnostic.code });
+         |             ^
+      87 |     emit({ type: 'fallback', reason, diagnostic });
+      88 |     return { answer: fallback(input), fallback: true as const, reason };
+      89 |   } finally {
+
+      at handleAI (server/service.ts:86:13)
+      at Object.<anonymous> (server/service.test.ts:22:15)
+
+    console.warn
+      [approvals.ai] { code: 'invalid_response' }
+
+      84 |           : 'unavailable';
+      85 |     const diagnostic = diagnose(err);
+    > 86 |     console.warn('[approvals.ai]', { code: diagnostic.code });
+         |             ^
+      87 |     emit({ type: 'fallback', reason, diagnostic });
+      88 |     return { answer: fallback(input), fallback: true as const, reason };
+      89 |   } finally {
+
+      at handleAI (server/service.ts:86:13)
+      at Object.<anonymous> (server/service.test.ts:32:15)
+
+PASS server/diagnostics.test.ts
+
+Test Suites: 4 passed, 4 total
+Tests:       22 passed, 22 total
+Snapshots:   0 total
+Time:        1.951 s, estimated 3 s
+Ran all test suites.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> crystal-ball@1.0.0 test:ui
+> vitest run
+
+
+ RUN  v3.2.7 /workspace/scratch/b924920ab9bc/revision/crystal-ball
+
+ ✓ components/ChatPanel.test.tsx (4 tests) 170ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  07:15:55
+   Duration  779ms (transform 65ms, setup 63ms, collect 98ms, tests 170ms, environment 257ms, prepare 55ms)
+
